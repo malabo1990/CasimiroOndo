@@ -14,8 +14,8 @@ de proyectos personales (IHTML y Vectopen).
 - `index.html` — contenido del sitio
 - `css/style.css` — estilos (tema claro con acentos turquesa, cabecera flotante tipo "Dynamic Island", modo alto contraste)
 - `js/main.js` — botón de alto contraste + año del pie de página + animaciones de scroll
-- `assets/avatar.svg` — tarjeta de perfil (recorte vectorial extraído directo del CV en PDF, con su sombra suave original)
-- `assets/catedral.svg` — ícono de la Catedral de Santa Isabel de Malabo (recorte vectorial del mismo CV)
+- `assets/avatar.png` — tarjeta de perfil (recorte con transparencia real extraído del CV en PDF, sin fondo del banner)
+- `assets/catedral.png` — ícono de la Catedral de Santa Isabel de Malabo (recorte con transparencia del mismo CV)
 - `assets/CV-Casimiro-Ondo-Obiang.pdf` — versión descargable del CV (solo la página de currículo, sin la carta de motivación)
 
 ## Desarrollo local
