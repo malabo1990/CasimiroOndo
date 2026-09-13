@@ -40,7 +40,7 @@ alternarCabecera();
 window.addEventListener("scroll", alternarCabecera, { passive: true });
 
 /* Animación de aparición al hacer scroll */
-const secciones = document.querySelectorAll(".seccion");
+const secciones = document.querySelectorAll(".seccion, .tarjeta-lateral");
 if ("IntersectionObserver" in window) {
   const observador = new IntersectionObserver(
     (entradas) => {
