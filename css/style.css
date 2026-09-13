@@ -221,16 +221,28 @@ button:focus-visible {
   font-size: clamp(1.7rem, 4.6vw, 2.5rem);
   margin: 1.1rem 0 0.2rem;
   letter-spacing: -0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(2, 20, 26, 0.55);
   animation: aparecer 0.6s ease-out 0.1s both;
 }
 
 .hero__titulo {
   position: relative;
-  color: var(--acento-fuerte);
+  color: #bdf1f5;
   font-weight: 600;
   font-size: clamp(0.92rem, 2.2vw, 1.05rem);
   margin: 0;
+  text-shadow: 0 1px 10px rgba(2, 20, 26, 0.5);
   animation: aparecer 0.6s ease-out 0.18s both;
+}
+
+:root[data-contraste="alto"] .hero__nombre {
+  text-shadow: none;
+}
+
+:root[data-contraste="alto"] .hero__titulo {
+  color: var(--acento-fuerte);
+  text-shadow: none;
 }
 
 .hero__ubicacion {
