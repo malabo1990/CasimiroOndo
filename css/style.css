@@ -1,0 +1,371 @@
+:root {
+  --bg: #0c0c0c;
+  --bg-panel: #161616;
+  --texto: #f2f0ec;
+  --texto-tenue: #a9a6a0;
+  --acento: #e29a3d;
+  --acento-fuerte: #f2b25a;
+  --borde: #2a2a2a;
+  --radio: 14px;
+  --fuente-titulo: "Poppins", "Segoe UI", sans-serif;
+  --fuente-cuerpo: "Inter", "Segoe UI", sans-serif;
+}
+
+:root[data-contraste="alto"] {
+  --bg: #000000;
+  --bg-panel: #000000;
+  --texto: #ffffff;
+  --texto-tenue: #ffffff;
+  --acento: #ffd54a;
+  --acento-fuerte: #ffe08a;
+  --borde: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: var(--fuente-cuerpo);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--acento-fuerte);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+.salta-contenido {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--acento);
+  color: #101010;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+}
+
+.salta-contenido:focus {
+  left: 0;
+}
+
+/* Cabecera */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.9rem clamp(1rem, 4vw, 3rem);
+  background: rgba(12, 12, 12, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--borde);
+  flex-wrap: wrap;
+}
+
+.cabecera__cv {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+  border: 2px solid var(--acento);
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+}
+
+.cabecera__nav {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.cabecera__nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.cabecera__nav a:hover,
+.cabecera__nav a:focus-visible {
+  border-bottom-color: var(--acento);
+  color: var(--acento-fuerte);
+}
+
+.boton-contraste {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.boton-contraste:hover {
+  border-color: var(--acento);
+  color: var(--acento-fuerte);
+}
+
+.boton-contraste[aria-pressed="true"] {
+  background: var(--acento);
+  color: #101010;
+  border-color: var(--acento);
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(2.5rem, 8vw, 5rem) 1.5rem 3rem;
+}
+
+.hero__avatar {
+  width: clamp(140px, 22vw, 220px);
+  height: clamp(140px, 22vw, 220px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--acento);
+  background: #000;
+}
+
+.hero__nombre {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin: 1.25rem 0 0.25rem;
+}
+
+.hero__titulo {
+  color: var(--acento);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  margin: 0;
+}
+
+.hero__ubicacion {
+  color: var(--texto-tenue);
+  margin: 0.5rem 0 1.75rem;
+}
+
+.hero__acciones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 2px solid var(--acento);
+}
+
+.boton--relleno {
+  background: var(--acento);
+  color: #101010;
+}
+
+.boton--relleno:hover,
+.boton--relleno:focus-visible {
+  background: var(--acento-fuerte);
+  color: #101010;
+}
+
+.boton--borde {
+  background: transparent;
+  color: var(--acento-fuerte);
+}
+
+.boton--borde:hover,
+.boton--borde:focus-visible {
+  background: var(--acento);
+  color: #101010;
+}
+
+/* Secciones */
+.seccion {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.75rem 1.5rem;
+  border-top: 1px solid var(--borde);
+}
+
+.seccion__titulo {
+  font-family: var(--fuente-titulo);
+  color: var(--acento);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.parrafo-destacado {
+  font-size: 1.1rem;
+  max-width: 65ch;
+}
+
+.lista-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.lista-chips li {
+  background: var(--bg-panel);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.lista-simple {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.lista-simple li {
+  margin-bottom: 0.85rem;
+}
+
+.lista-simple--premios li {
+  list-style: "🏆  ";
+  padding-left: 0.3rem;
+}
+
+.formacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem 3rem;
+}
+
+.formacion-grid__subtitulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.05rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--texto);
+}
+
+.formacion-grid > div > .formacion-grid__subtitulo:first-child {
+  margin-top: 0;
+}
+
+/* Línea de tiempo */
+.linea-tiempo {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid var(--borde);
+}
+
+.linea-tiempo li {
+  position: relative;
+  padding: 0 0 1.75rem 1.75rem;
+}
+
+.linea-tiempo li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--acento);
+}
+
+.linea-tiempo__fecha {
+  display: inline-block;
+  color: var(--acento);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
+}
+
+.linea-tiempo h3 {
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.linea-tiempo p {
+  margin: 0;
+  color: var(--texto-tenue);
+  font-size: 0.95rem;
+}
+
+/* Contacto */
+.lista-contacto {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.lista-contacto li {
+  background: var(--bg-panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem 1.25rem;
+}
+
+.lista-contacto__etiqueta {
+  display: block;
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.pie {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: var(--texto-tenue);
+  font-size: 0.85rem;
+}
