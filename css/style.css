@@ -94,9 +94,9 @@ button:focus-visible {
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
   height: var(--cabecera-alto);
-  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  padding: 0 clamp(1rem, 3vw, 3rem);
   background:
     linear-gradient(100deg, rgba(3, 12, 20, 0.72), rgba(6, 40, 48, 0.45)),
     url("../assets/banner.jpg") center 35% / cover no-repeat;
@@ -119,6 +119,7 @@ button:focus-visible {
 }
 
 .cabecera__marca {
+  flex-shrink: 0;
   font-family: var(--fuente-titulo);
   font-weight: 800;
   color: #ffffff;
@@ -129,19 +130,32 @@ button:focus-visible {
 
 .cabecera__nav {
   display: flex;
-  gap: clamp(0.9rem, 2vw, 1.6rem);
-  flex-wrap: wrap;
+  gap: clamp(0.6rem, 1.4vw, 1.4rem);
+  flex-wrap: nowrap;
   margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.cabecera__nav::-webkit-scrollbar {
+  display: none;
 }
 
 .cabecera__nav a {
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
   padding: 0.25rem 0.05rem;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .cabecera__nav {
+    display: none;
+  }
 }
 
 .cabecera__nav a:hover,
@@ -156,6 +170,7 @@ button:focus-visible {
 }
 
 .boton-contraste {
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.35);
